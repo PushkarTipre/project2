@@ -19,7 +19,7 @@ class _QuizState extends State<Quiz> {
 
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        selectedAnswers = [];
+        //selectedAnswers = [];
         activeScreenId = 'result-screen';
       });
     }
@@ -49,9 +49,17 @@ class _QuizState extends State<Quiz> {
             onSelectAnswer: chooseAnswer,
           ); //Question Screen displayed if main screen not displayed
 
+    void restartQuiz() {
+      setState(() {
+        selectedAnswers = [];
+        activeScreenId = 'questions_screen';
+      });
+    }
+
     if (activeScreenId == 'result-screen') {
       screenWidget = ResultsScreen(
         chosenAnswers: selectedAnswers,
+        onRestart: restartQuiz,
       );
     }
 
@@ -59,7 +67,9 @@ class _QuizState extends State<Quiz> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
-          decoration: BoxDecoration(
+          alignment: Alignment.center,
+          height: double.infinity,
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
                 Color.fromARGB(255, 78, 13, 151),

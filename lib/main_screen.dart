@@ -18,21 +18,21 @@ class MainScreen extends StatelessWidget {
               color: Colors.white.withOpacity(0.7),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 80.0,
           ),
-          Text(
+          const Text(
             'Learn Flutter the fun way!',
             style: TextStyle(color: Colors.white, fontSize: 22.0),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30.0,
           ),
           OutlinedButton.icon(
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
             onPressed: changeScreen,
-            icon: Icon(Icons.arrow_right_alt),
-            label: Text(
+            icon: const Icon(Icons.arrow_right_alt),
+            label: const Text(
               'Start Quiz',
             ),
           ),
